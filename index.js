@@ -39,25 +39,6 @@ async function run() {
   }
 }
 run().catch((err) => console.error(err));
-// const uri1 =`mongodb+srv://${process.env.DB_USER1}:${process.env.DB_PASSWORD1}@cluster0.fhm17oo.mongodb.net/?retryWrites=true&w=majority`;
-// const client1 = new MongoClient(uri1, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-//   serverApi: ServerApiVersion.v1,
-// });
-// async function run() {
-//   try {
-//     const serviceReview = client1.db("review").collection("users");
-//     app.post("/review", async (req, res) => {
-//       const review = req.body;
-//       const result = await serviceReview.insertOne(review);
-//       res.send(result);
-//     });
-//   } finally {
-//   }
-// }
-// run().catch((err) => console.error(err));
-
 app.listen(port, () => {
   console.log("working", port);
 });
