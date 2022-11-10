@@ -22,10 +22,6 @@ async function run() {
       const services = await cursor.limit(3).toArray();
       res.send(services);
     });
-  } finally {
-  }
-  try {
-    const deliveryServices = client.db("services").collection("delivery");
     app.get("/", async (req, res) => {
       const query = {};
       const cursor = deliveryServices.find(query);
@@ -38,7 +34,8 @@ async function run() {
       const service = await deliveryServices.findOne(query);
       res.send(service);
     });
-  } finally {
+  } 
+  finally {
   }
 }
 run().catch((err) => console.error(err));
